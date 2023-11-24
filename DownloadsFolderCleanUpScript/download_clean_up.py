@@ -3,6 +3,16 @@ import shutil
 import time
 
 
+def set_target_directory(source):
+    global target_dir
+    target_dir = source
+
+
+def set_exit_directory(exit_source):
+    global exit_dir
+    exit_dir = exit_source
+
+
 def set_time(input_from_user):
     global time_input
     time_input = input_from_user
@@ -10,7 +20,7 @@ def set_time(input_from_user):
 
 def move_files(name_of_new_dir, name_of_file):
     source = os.path.join(os.getcwd(), name_of_file)
-    new_dir_path = os.path.join('C:\\Users\\user\\Desktop', name_of_new_dir)
+    new_dir_path = os.path.join(exit_dir, name_of_new_dir)
 
     if not os.path.exists(new_dir_path):
         os.mkdir(new_dir_path)
@@ -24,6 +34,7 @@ def move_files(name_of_new_dir, name_of_file):
 
 
 def run_program():
+    os.chdir(target_dir)
     while True:
         all_files = os.listdir()
 
@@ -54,7 +65,8 @@ def run_program():
         time.sleep(time_input)
 
 
-os.chdir('C:\\Users\\user\\Downloads')
+target_dir = "C:\\Users\\user\\Downloads"  # directory to clean, default downloads
+exit_dir = "C:\\Users\\user\\Desktop"  # directory to place cleaned files, default desktop
 
 compressed_files_extensions = ['.zip', '.rar', '.pk3']
 torrent_and_sub_files_extensions = ['.torrent', '.srt']
