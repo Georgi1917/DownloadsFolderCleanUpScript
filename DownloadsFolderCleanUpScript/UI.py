@@ -73,18 +73,18 @@ var = IntVar()
 # creating text fields
 target_directory = Text(frame_text)
 exit_directory = Text(frame_text)
-target_directory.place(x=90, y=0, width=250, height=20)
-exit_directory.place(x=90, y=40, width=250, height=20)
-target_label = Label(frame_text, text="target dir:")
-exit_label = Label(frame_text, text="exit dir:")
+target_directory.place(x=120, y=0, width=250, height=20)
+exit_directory.place(x=120, y=40, width=250, height=20)
+target_label = Label(frame_text, text="Target Directory:")
+exit_label = Label(frame_text, text="Exit Directory:")
 target_label.place(x=10, y=0)
 exit_label.place(x=10, y=40)
 
 # creating buttons for text fields
 first_add_button = Button(frame_text, text="ADD", command=lambda: set_target_dir(get_text_target_dir()))
 second_add_button = Button(frame_text, text="ADD", command=lambda: set_exit_dir(get_text_exit_dir()))
-first_add_button.place(x=370, y=0, width=30, height=20)
-second_add_button.place(x=370, y=40, width=30, height=20)
+first_add_button.place(x=390, y=0, width=30, height=20)
+second_add_button.place(x=390, y=40, width=30, height=20)
 
 # creating label
 label1 = Label(frame_label, text="How do you want to run your code?", background="gray", font=("Times new roman", 17))

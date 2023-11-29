@@ -5,11 +5,19 @@ import time
 
 def set_target_directory(source):
     global target_dir
+
+    if source == "" or source.isspace():
+        return
+
     target_dir = source
 
 
 def set_exit_directory(exit_source):
     global exit_dir
+
+    if exit_source == "" or exit_source.isspace():
+        return
+
     exit_dir = exit_source
 
 
